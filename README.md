@@ -4,7 +4,14 @@
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+Alicia Bermejo Galindo
+Usuario: pandaconalioli
+
+Laleska Contino Camacaro
+Usuario: laleskacc4
+
+Desiree Guerra Fernandez
+usuario: desireeguerra
 
 ## Objetivos del trabajo
 
