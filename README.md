@@ -4,14 +4,14 @@
 
 ## Integrantes del equipo
 
-Alicia Bermejo Galindo
-Usuario: pandaconalioli
+Alicia Bermejo Galindo 
+|| pandaconalioli
 
-Laleska Contino Camacaro
-Usuario: laleskacc4
+Laleska Contino Camacaro 
+|| laleskacc4
 
-Desiree Guerra Fernandez
-usuario: desireeguerra
+Desiree Guerra Fernandez 
+|| desireeguerra
 
 ## Objetivos del trabajo
 
