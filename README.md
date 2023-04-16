@@ -13,7 +13,7 @@ Laleska Contino Camacaro
 Desiree Guerra Fernandez 
 || desireeguerra
 
-Miriam Estaban Bruña 
+Miriam Esteban Bruña 
 || miriam-estebanb
 
 ## Objetivos del trabajo
