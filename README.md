@@ -1,6 +1,6 @@
-# [Título del trabajo]
+# [TÃ­tulo del trabajo]
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+[DescripciÃ³n breve del proyecto a realizar (2-3 frases).]
 
 ## Integrantes del equipo
 
@@ -13,8 +13,8 @@ Laleska Contino Camacaro
 Desiree Guerra Fernandez 
 || desireeguerra
 
-Miriam Estaban Bru�a 
-
+Miriam Estaban Bruña 
+|| miriam-estebanb
 
 ## Objetivos del trabajo
 
