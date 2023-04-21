@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<string.h>//Funciones de las cadenas
+#include<string.h>//Biblioteca de las cadenas
 #include <locale.h> //Biblioteca para idiomas
 
 
@@ -10,7 +10,7 @@ void Menu(char *opcion);
 int ImprimirFichero();
 void Instrucciones(char *informacion);
 int main(){
-	setlocale(LC_CTYPE,"Spanish");//Idioma español, poner tildes y "ñ". De la biblioteca locale
+	setlocale(LC_CTYPE,"Spanish");//Idioma espaÃ±ol, poner tildes y "Ã±". De la biblioteca locale
 	char opcion,informacion;
 	do{
 		Menu(&opcion);
@@ -23,44 +23,44 @@ int main(){
 				system("PAUSE"); //Parar para que lea el fichero
 				break;
 			case 'b':
-				printf("COMPARAR EN UNA O MÁS TABLAS\n\n");
-				//Preguntar cuántos ficheros quiere comparar.
+				printf("COMPARAR EN UNA O MÃS TABLAS\n\n");
+				//Preguntar cuÃ¡ntos ficheros quiere comparar.
 				//Bucle para pedir (tantas veces como haya puesto) que escriba nombre del fichero, si no lo encuentra pedir otro hasta que exista el que pide
-				//Si falla 2 veces de nombre, mensaje de te estás equivocando mucho, volver al menú
-				system("PAUSE"); //Parar para comprobar que coge la opción, cuando pongamos una función o algo podemos quitarlo
+				//Si falla 2 veces de nombre, mensaje de te estÃ¡s equivocando mucho, volver al menÃº
+				system("PAUSE"); //Parar para comprobar que coge la opciÃ³n, cuando pongamos una funciÃ³n o algo podemos quitarlo
 				break;
 			case 'c':
 				printf("CREAR UNA NUEVA TABLA\n\n");
 				
-				system("PAUSE"); //Parar para comprobar que coge la opción, cuando pongamos una función o algo podemos quitarlo
+				system("PAUSE"); //Parar para comprobar que coge la opciÃ³n, cuando pongamos una funciÃ³n o algo podemos quitarlo
 				break;
 			case 'd':
 				printf("INSTRUCCIONES IMPORTANTES\n\n");
-				Instrucciones(&informacion); //LLAMADA A LA FUNCION 2. Vaya, que la pones a funcionar aquí
+				Instrucciones(&informacion); //LLAMADA A LA FUNCION 2. Vaya, que la pones a funcionar aquÃ­
 				break;
 			case 'e':
-				printf("¡Nos vemos!\n\n");
+				printf("Â¡Nos vemos!\n\n");
 				system("PAUSE"); //Parar para que vea el mensaje antes de que se cierre el programa
 				break;
 			default: 
-				printf("Opción no disponible\n\n");
+				printf("OpciÃ³n no disponible\n\n");
 				system("PAUSE"); //Parar para que vea el mensaje antes de que se repita la pregunta
 				break;
 		}
-		//Aquí metemos el resto del programa con ifs
+		//AquÃ­ metemos el resto del programa con ifs
 	}while(opcion!='e');
 }
 
-//Función. Menú
+//FunciÃ³n. MenÃº
 void Menu(char *opcion){
 	system("cls");//Borrar pantalla	
 	printf("FUENTES DE MADRID\n");	
 	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n\n",61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61);//Esto es un subrayado
 	
-	printf("Bienvenida al menú de opciones %c: \n",01);//Cara contenta
-	printf("Introduce la opción:\n\n");
+	printf("Bienvenida al menÃº de opciones %c: \n",01);//Cara contenta
+	printf("Introduce la opciÃ³n:\n\n");
 	printf("a-Imprimir tabla\n");
-	printf("b-Comparar una o más tablas\n");
+	printf("b-Comparar una o mÃ¡s tablas\n");
 	printf("c-Crear una nueva tabla\n");
 	printf("d-Instrucciones importantes\n");
 	printf("e-Salir\n\n");
@@ -68,7 +68,7 @@ void Menu(char *opcion){
 	scanf("%c",&*opcion);
 }
 
-//Función. Imprimir fichero
+//FunciÃ³n. Imprimir fichero
 int ImprimirFichero(){
 	FILE * csvfichero;
 	int nfil;
@@ -78,35 +78,35 @@ int ImprimirFichero(){
 	//Contar filas
 	nfil=nFil(ncsv);
 	
-	//AQUÍ HAY QUE VER CÓMO QUEREMOS IMPRIMIR EL FICHERO
+	//AQUÃ HAY QUE VER CÃ“MO QUEREMOS IMPRIMIR EL FICHERO
 	
 	
 	return 1;
 }
 
-//Función pedir el nombre del csv
+//FunciÃ³n pedir el nombre del csv
 void nomcsv(char ncsv[])
 {
 	int cont1,cont2;
 	char y[4],m[2],L[20];
 	
-	//Pedir año, repetir mientras no sea 4 dígitos
+	//Pedir aÃ±o, repetir mientras no sea 4 dÃ­gitos
 	do{
-		printf("Introduzca el año (con 4 dígitos):\n");
+		printf("Introduzca el aÃ±o (con 4 dÃ­gitos):\n");
 		scanf("%s",&y);
     	cont1=nChar(y);
 	}while(cont1!=4);
 	
-	//Pedir mes, repetir mientras no sea 2 dígitos
+	//Pedir mes, repetir mientras no sea 2 dÃ­gitos
 	do{
-		printf("Introduzca el mes (con 2 dígitos):\n");
+		printf("Introduzca el mes (con 2 dÃ­gitos):\n");
 		scanf("%s",&m);
     	cont2=nChar(m);
 	}while(cont2!=2);
 	
 	//Pedir lugar, repetir mientras no tenga una consonante al principio
 	do{
-		printf("Introduzca el barrio: (la primera letra mayúscula)\n");
+		printf("Introduzca el barrio: (la primera letra mayÃºscula)\n");
 		scanf("%s",&L);
 	}while(65>L[0]||L[0]>90);
 	
@@ -114,7 +114,7 @@ void nomcsv(char ncsv[])
 	strcat(strcat(strcat(strcat(strcpy(ncsv,y),m),"_"),L),".csv");
 }
 
-//Función contador de caracteres
+//FunciÃ³n contador de caracteres
 int nChar(char y[])
 {
 	int i=0, cont=0;
@@ -127,13 +127,13 @@ int nChar(char y[])
     return cont;
 }
 
-//Función. Instrucciones
+//FunciÃ³n. Instrucciones
 void Instrucciones(char*informacion){					
 	do{
-		printf("¿Qué quieres saber?\n\n");
+		printf("Â¿QuÃ© quieres saber?\n\n");
 		printf("a-Nombres de los archivos\n");
-		printf("b-Información proporcionada en los archivos\n");
-		printf("c-Ya sé todo lo importante\n\n");
+		printf("b-InformaciÃ³n proporcionada en los archivos\n");
+		printf("c-Ya sÃ© todo lo importante\n\n");
 		fflush(stdin);
 		scanf("%c",&*informacion);
 		
@@ -141,29 +141,29 @@ void Instrucciones(char*informacion){
 		{
 			case 'a':
 				printf("NOMBRES DE LOS ARCHIVOS\n");
-				printf("Para que el programa funcione, debes tener en tu ordenador uno o más ficheros llamados YYYYMM_Lugar, donde:\n");
-				printf("YYYY: año\nMM: mes\nLugar:uno de los barrios de Madrid de los que se tengan archivos.\n");
+				printf("Para que el programa funcione, debes tener en tu ordenador uno o mÃ¡s ficheros llamados YYYYMM_Lugar, donde:\n");
+				printf("YYYY: aÃ±o\nMM: mes\nLugar:uno de los barrios de Madrid de los que se tengan archivos.\n");
 				system("PAUSE"); //Parar para que vea el mensaje
 				break;
 			case 'b':
-				printf("INFORMACIÓN PROPORCIONADA EN LOS ARCHIVOS\n");
-				printf("Dentro del fichero hay una fila que corresponde a los datos de una fuente. En cada fila está:\n");
-				printf("Nombre de la fuente\npH\nConductividad(%cS/cm)\nTurbidez(NTU)\nColiformes(UFC/100mL)\n",181); //el símbolo de micro
+				printf("INFORMACIÃ“N PROPORCIONADA EN LOS ARCHIVOS\n");
+				printf("Dentro del fichero hay una fila que corresponde a los datos de una fuente. En cada fila estÃ¡:\n");
+				printf("Nombre de la fuente\npH\nConductividad(%cS/cm)\nTurbidez(NTU)\nColiformes(UFC/100mL)\n",181); //el sÃ­mbolo de micro
 				system("PAUSE"); //Parar para que vea el mensaje
 				break;
 			case 'c':
-				printf("¡Vuelve cuando te surjan más dudas!\n\n");
-				system("PAUSE"); //Parar para que vea el mensaje antes de que se cierre el menú
+				printf("Â¡Vuelve cuando te surjan mÃ¡s dudas!\n\n");
+				system("PAUSE"); //Parar para que vea el mensaje antes de que se cierre el menÃº
 				break;
 			default: 
-				printf("Opción no disponible\n\n");
+				printf("OpciÃ³n no disponible\n\n");
 				system("PAUSE"); //Parar para que vea el mensaje antes de que se repita la pregunta
 				break;			
 		}
 	}while(*informacion!='c');
 }
 
-//Función. Contador fuentes (filas-1)
+//FunciÃ³n. Contador fuentes (filas-1)
 int nFil(char ncsv[])
 {
 	FILE * csvfichero;
@@ -192,6 +192,6 @@ int nFil(char ncsv[])
     //Tercer paso es siempre cerrar el fichero al final
 	fclose(csvfichero);
 	
-	//Descontar la fila de  los títulos
+	//Descontar la fila de  los tÃ­tulos
     return cont-1;
 }
