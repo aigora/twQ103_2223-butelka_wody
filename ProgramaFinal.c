@@ -176,7 +176,7 @@ void CreaFichero(char ncsv[])
 		
 	fprintf(csvfichero, "Parametros;pH;Conductividad;Turbidez;Coliformes\n");
 		for (i=0; i<nfil; i++) { 
-	fprintf(csvfichero, "Fuente_%d;%.2f;%d;%d;%d\n", i, num[i].pH, num[i].Conductividad, num[i].Turbidez, num[i].Turbidez);
+	fprintf(csvfichero, "Fuente_%d;%.2f;%d;%d;%d\n", i, num[i].pH, num[i].Conductividad, num[i].Turbidez, num[i].Coliformes);
 	}
 	
 	fclose(csvfichero);
