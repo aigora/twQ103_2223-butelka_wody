@@ -22,13 +22,19 @@ int csvAEstructura(char ncsv[],int nfil,struct fuente *num);
 int nChar(char y[]);
 int nFil(char ncsv[]);
 void nomcsv(char ncsv[]);
-void ordenar_fuente(struct fuente[], int);
+void ordenar_fuente(struct fuente[], int);//Ordenar el pH de mayor a menor
+void ordenar_fuente2(struct fuente[], int);//Ordenar el pH de menor a mayor
+
 int main(){
 	setlocale(LC_CTYPE,"Spanish");//Idioma español, poner tildes y "ñ". De la biblioteca locale
 	struct fuente *num;
 	int nfil=0;
 	char opcion,informacion;
 	char ncsv[26];
+	
+	
+	
+	
 	do{
 		Menu(&opcion);
 
@@ -53,7 +59,7 @@ int main(){
 				csvAEstructura(ncsv,nfil,*&num);
 				
 				//Ordenar pH de mayor a menor
-				ordenar_fuente(num, nfil);
+				ordenar_fuente2(num, nfil);
 				
 				
 				//Preguntar cuántas tablas quiere comparar.
@@ -398,6 +404,31 @@ void ordenar_fuente(struct fuente datos[], int nfuente) {
 	}
 	
 	for(i=0; i<(nfuente-1);i++) {
+		printf("%s\t%.2f\t%d\t%d\t%d\n", datos[i].nombre, datos[i].pH, datos[i].Conductividad, datos[i].Turbidez, datos[i].Coliformes);
+	}
+	
+}
+
+//Ordenar fuente de menor a mayor
+void ordenar_fuente2(struct fuente datos[], int nfuente) {
+	
+	int i, j;
+	struct fuente aux;
+	int v[nfuente];
+	
+	//Ordenar los vectores
+	for (i=0; i<nfuente-1; i++) {
+		for(j=i+1; j<nfuente; j++) {
+			if(datos[i].pH > datos[j].pH) {
+				aux = datos[i];
+				datos[i]=datos[j];
+				datos[j]= aux;
+			}
+			
+		}
+	}
+	
+	for(i=1; i<(nfuente);i++) {
 		printf("%s\t%.2f\t%d\t%d\t%d\n", datos[i].nombre, datos[i].pH, datos[i].Conductividad, datos[i].Turbidez, datos[i].Coliformes);
 	}
 	
