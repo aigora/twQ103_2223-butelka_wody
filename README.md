@@ -18,7 +18,12 @@ Miriam Esteban Bruña
 
 ## Objetivos del trabajo
 Lectura de los archivos
+
 Almacenaje de los archivos en estructuras para su posterior trabajo
+
 Impresión de archivo en forma de tabla
+
 Ordenación correcta de valores en vectores
+
 Cálculo de media, valor máximo y mediana dentro de un vector
+
