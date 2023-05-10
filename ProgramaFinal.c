@@ -544,7 +544,7 @@ int ImprimirFichero(int nfil,struct fuente *num){
 		printf("%s\t%.2f\t%d\t\t%d\t\t%d", num[i].nombre, num[i].pH, num[i].Conductividad, num[i].Turbidez, num[i].Coliformes);
 		if(num[i].pH>=9.5 ||num[i].pH<=6.5)
 		{
-			printf("¡AVISO!\n");
+			printf("\t\t¡AVISO!\n");
 			bul=1; 	
 		}
 		printf("\n");
@@ -553,7 +553,7 @@ int ImprimirFichero(int nfil,struct fuente *num){
 	{
 		printf("\n¡AVISO!\n");
 		printf("El agua apta para poder ser consumida tiene que tener un pH entre 6.5 y 9.5.\n");
-		printf("Si la media del pH se sale del rango 6.5-9.5, es probable que esto se deba a un exceso de minerales, por lo que es inutil añadirle cloro al agua ya que este le impedirá actuar.\n");
+		printf("Si la media del pH se sale del rango 6.5-9.5, es probable que esto se deba a un exceso de minerales,\npor lo que es inútil añadirle cloro al agua ya que este le impedirá actuar.\n");
 	}
 	return 1;
 }
