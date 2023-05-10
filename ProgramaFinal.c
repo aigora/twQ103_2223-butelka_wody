@@ -229,10 +229,6 @@ int main(){
 							}
 							system("PAUSE");
 							break;
-						case 'f':
-							printf("¡Hasta pronto!\n");
-							system("PAUSE");
-							break;
 						default:
 							break;
 					}
@@ -471,10 +467,6 @@ int main(){
 								default:
 									break;
 							}
-							system("PAUSE");
-							break;
-						case 'f':
-							printf("¡Hasta pronto!\n");
 							system("PAUSE");
 							break;
 						default:
