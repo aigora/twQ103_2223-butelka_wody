@@ -30,6 +30,7 @@ int nFil(char ncsv[]);
 void nomcsv(char ncsv[]);
 int main(){
 	setlocale(LC_CTYPE,"Spanish");//Idioma español, poner tildes y "ñ". De la biblioteca locale
+	FILE * csvfichero;
 	struct fuente *num,*num2;
 	int nfil=0,nfil2=0,numtablas=0,i=0;
 	float media[2],max[2],min[2],mediana[2];
@@ -44,6 +45,13 @@ int main(){
 				system("cls"); //Borrar pantalla
 				printf("IMPRIMIR UNA TABLA\n\n");
 				nomcsv(ncsv);
+				csvfichero= fopen(ncsv,"r");//Modo lectura	
+				if(csvfichero==NULL){
+					printf("No se ha podido encontrar el fichero, vuelva a intentarlo.\n");
+					system("PAUSE");
+					break;
+				}
+				fclose(csvfichero);
 				system("cls");
 				printf("%s\n\n",ncsv);
 				nfil=nFil(ncsv);
@@ -63,6 +71,13 @@ int main(){
 				if(numtablas==1)
 				{
 					nomcsv(ncsv);
+					csvfichero= fopen(ncsv,"r");
+					if(csvfichero==NULL){ //Si no existe el archivo no continúa funcionando el programa
+						printf("No se ha podido encontrar el fichero, vuelva a intentarlo.\n");
+						system("PAUSE");
+						break;
+					}
+					fclose(csvfichero);
 					nfil=nFil(ncsv);
 					num =  (struct fuente *) malloc (nfil*sizeof (struct fuente));
 					csvAEstructura(ncsv,nfil,*&num);
@@ -236,11 +251,25 @@ int main(){
 				{
 					printf("\nPrimer archivo:\n");
 					nomcsv(ncsv);
+					csvfichero= fopen(ncsv,"r");	
+					if(csvfichero==NULL){
+						printf("No se ha podido encontrar el fichero, vuelva a intentarlo.\n");
+						system("PAUSE");
+						break;
+					}
+					fclose(csvfichero);
 					nfil=nFil(ncsv);
 					num =  (struct fuente *) malloc (nfil*sizeof (struct fuente));
 					csvAEstructura(ncsv,nfil,*&num);
 					printf("\nSegundo archivo:\n");
 					nomcsv(ncsv2);
+					csvfichero= fopen(ncsv,"r");	
+					if(csvfichero==NULL){
+						printf("No se ha podido encontrar el fichero, vuelva a intentarlo.\n");
+						system("PAUSE");
+						break;
+					}
+					fclose(csvfichero);
 					nfil2=nFil(ncsv2);
 					num2 =  (struct fuente *) malloc (nfil2*sizeof (struct fuente));
 					csvAEstructura(ncsv2,nfil2,*&num2);
@@ -478,6 +507,13 @@ int main(){
 				system("cls");
 				printf("CREAR UNA NUEVA TABLA\n\n");
 				nomcsv(ncsv);
+				csvfichero= fopen(ncsv,"r");	
+				if(csvfichero==NULL){
+					printf("No se ha podido encontrar el fichero, vuelva a intentarlo.\n");
+					system("PAUSE");
+					break;
+				}
+				fclose(csvfichero);
 				CreaFichero(ncsv);
 				nfil=nFil(ncsv);
 				num =  (struct fuente *) malloc (nfil*sizeof (struct fuente));
@@ -646,12 +682,6 @@ int csvAEstructura(char ncsv[],int nfil,struct fuente *num) { //Esto es la de co
 	
 	//Primero abrir el fichero
 	csvfichero= fopen(ncsv,"r");//Modo lectura	
-	
-	//Comprueba si encuentra el fichero si no lo siguiente no va
-	if(csvfichero==NULL){
-		printf("No se ha podido encontrar el fichero\n");
-		return 0;
-	}
 	
 	char csv=fgetc(csvfichero);
 	//Lee con char el documento hasta el fin del documento 
@@ -1171,12 +1201,6 @@ int nFil(char ncsv[])
 	//Primero abrir el fichero
 	csvfichero= fopen(ncsv,"r");//Modo lectura	
 	
-	//Comprueba si encuentra el fichero si no lo siguiente no va
-	if(csvfichero==NULL){
-		printf("No se ha podido encontrar el fichero\n");
-		return 0;
-	}
-
 	char csv=fgetc(csvfichero);
 	
 	//Mientras no haya acabado el csv
