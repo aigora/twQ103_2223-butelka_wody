@@ -509,6 +509,8 @@ int main(){
 
 //Función. Menú
 void Menu(char *opcion){
+	do
+	{
 	system("cls");//Borrar pantalla	
 	printf("     ` ' `                                        ` ' `            \n");
 	printf(" .'''. ' .'''.                                .'''. ' .'''.       \n");
@@ -531,7 +533,8 @@ void Menu(char *opcion){
 	printf("d-Instrucciones importantes\n");
 	printf("e-Salir\n\n");
 	fflush(stdin);
-	scanf("%c",&*opcion);
+	scanf("%c",&*opcion);	
+	}while (*opcion!='a'&&*opcion!='b'&&*opcion!='c'&&*opcion!='d'&&*opcion!='e');
 }
 
 //Función. Imprimir fichero
