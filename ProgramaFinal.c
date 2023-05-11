@@ -17,7 +17,7 @@ struct fuenteaux //Estructura auxiliar para la funcion csvAEstructura
 void Menu(char *opcion); 
 int ImprimirFichero(int nfil,struct fuente *num);
 void CreaFichero(char ncsv[]);
-void Instrucciones(char *informacion);
+void Instrucciones();
 int csvAEstructura(char ncsv[],int nfil,struct fuente *num);
 void menuEstadisticas(char *opcion2, char *parametro);
 void menuEstadisticas2(char *opcion2,char *parametro);
@@ -34,7 +34,7 @@ int main(){
 	struct fuente *num,*num2;
 	int nfil=0,nfil2=0,numtablas=0,i=0;
 	float media[2],max[2],min[2],mediana[2];
-	char opcion,informacion,parametro,opcion2;
+	char opcion,parametro,opcion2;
 	char ncsv[26],ncsv2[26];
 	do{
 		Menu(&opcion);
@@ -521,25 +521,25 @@ int main(){
 				system("cls");
 				printf("Has creado: %s\n\n",ncsv);
 				ImprimirFichero(nfil,*&num);
-				system("PAUSE"); //Parar para comprobar que coge la opción, cuando pongamos una función o algo podemos quitarlo
+				system("PAUSE");
 				break;
 			case 'd':
 				system("cls");
 				printf("INSTRUCCIONES IMPORTANTES\n\n");
-				Instrucciones(&informacion); //LLAMADA A LA FUNCION 2. Vaya, que la pones a funcionar aquí
+				Instrucciones(); 
 				break;
 			case 'e':
 				system("cls");
 				printf("¡Nos vemos!\n\n");
-				system("PAUSE"); //Parar para que vea el mensaje antes de que se cierre el programa
+				system("PAUSE"); 
 				break;
 			default: 
 				system("cls");
 				printf("Opción no disponible\n\n");
-				system("PAUSE"); //Parar para que vea el mensaje antes de que se repita la pregunta
+				system("PAUSE"); 
 				break;
 		}
-		//Aquí metemos el resto del programa con ifs
+		
 	}while(opcion!='e');
 }
 
@@ -588,7 +588,7 @@ int ImprimirFichero(int nfil,struct fuente *num){
 		}
 		printf("\n");
 	}
-	if(bul==1) //Se imprime si previamente se ha imprimido el AVISO
+	if(bul==1) //Se imprime si previamente se ha impreso el AVISO
 	{
 		printf("\n¡AVISO!\n");
 		printf("El agua apta para poder ser consumida tiene que tener un pH entre 6.5 y 9.5.\n");
@@ -604,7 +604,7 @@ void CreaFichero(char ncsv[])
 	int i,nfil=0;
 	FILE *csvfichero;
 	
-	csvfichero = fopen(ncsv, "w+");//Abre fichero vacio
+	csvfichero = fopen(ncsv, "w+");//Abre fichero vacío
 	printf("Introduce el numero de fuentes: ");
 	scanf("%d", &nfil);
 	//Memoria dinámica
@@ -636,22 +636,23 @@ void CreaFichero(char ncsv[])
 }
 
 //Función. Instrucciones
-void Instrucciones(char*informacion){					
+void Instrucciones(){		
+	char informacion;			
 	do{
 		printf("\n¿Qué quieres saber?\n\n");
 		printf("a-Nombres de los archivos\n");
 		printf("b-Información proporcionada en los archivos\n");
 		printf("c-Ya sé todo lo importante\n\n");
 		fflush(stdin);
-		scanf("%c",&*informacion);
+		scanf("%c",&informacion);
 		
-		switch(*informacion)
+		switch(informacion)
 		{
 			case 'a':
 				printf("NOMBRES DE LOS ARCHIVOS\n");
 				printf("Para que el programa funcione, debes tener en tu ordenador uno o más ficheros llamados YYYYMM_Lugar, donde:\n");
 				printf("YYYY: año\nMM: mes\nLugar:uno de los barrios de Madrid de los que se tengan archivos.\n");
-				system("PAUSE"); //Parar para que vea el mensaje
+				system("PAUSE");
 				break;
 			case 'b':
 				printf("INFORMACIÓN PROPORCIONADA EN LOS ARCHIVOS\n");
@@ -668,10 +669,10 @@ void Instrucciones(char*informacion){
 				system("PAUSE"); 
 				break;			
 		}
-	}while(*informacion!='c');
+	}while(informacion!='c');
 }
 
-int csvAEstructura(char ncsv[],int nfil,struct fuente *num) { //Esto es la de comparar ficheros
+int csvAEstructura(char ncsv[],int nfil,struct fuente *num) { 
 	FILE * csvfichero;
 	struct fuenteaux *numaux;
 	
