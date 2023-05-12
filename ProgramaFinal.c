@@ -541,6 +541,7 @@ int main(){
 		}
 		
 	}while(opcion!='e');
+	return 0;
 }
 
 //Función. Menú
