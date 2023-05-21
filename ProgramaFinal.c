@@ -584,7 +584,7 @@ int ImprimirFichero(int nfil,struct fuente *num){
 		printf("%s\t%.2f\t%d\t\t%d\t\t%d", num[i].nombre, num[i].pH, num[i].Conductividad, num[i].Turbidez, num[i].Coliformes);
 		if(num[i].pH>=9.5 ||num[i].pH<=6.5)
 		{
-			printf("\t\t¡AVISO!\n");
+			printf("\t\t¡AVISO!");
 			bul=1; 	
 		}
 		printf("\n");
